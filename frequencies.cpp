@@ -24,6 +24,9 @@ int main()
     }
 
     getWords(myWords, file);
+    sortWords(myWords);
+    
+    vector<pair<string, int>> myWordCounts = getWordCounts(myWords);
 
     return 0;
 }
@@ -49,9 +52,36 @@ string convertWord(const string& word)
     return converted;
 }
 
-
 void sortWords(vector<string>& words)
 {
-    sort(words.begin(), words.end())
+    sort(words.begin(), words.end());
 }
 
+vector<pair<string, int>> getWordCounts(vector<string>& words)
+{
+    vector<pair<string, int>> wordCounts;
+
+    if(words.empty())
+        return wordCounts;
+
+    string currWord = words[0];
+    int count = 1;
+
+    for(size_t i = 1; i < words.size(); i++)
+    {
+        if(words[i] == currWord)
+        {
+            count++;
+        }
+        else
+        {
+            wordCounts.push_back(make_pair(currWord, count));
+            currWord = words[i];
+            count = 1;
+        }
+    }
+
+    wordCounts.push_back(make_pair(currWord, count));
+
+    return wordCounts;
+}
