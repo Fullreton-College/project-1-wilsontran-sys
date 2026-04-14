@@ -39,5 +39,12 @@ void getWords(vector<string>& words, ifstream& file)
 
 string convertWord(const string& word)
 {
+    string converted;
+    for(char c : word)
+    {
+        if(isalpha(c))
+            converted += tolower(c);
+    }
 
+    return converted;
 }
