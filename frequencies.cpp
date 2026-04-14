@@ -39,7 +39,7 @@ void getWords(vector<string>& words, ifstream& file)
     string word;
     while(file >> word)
     {
-        words.push_back(word);
+        words.push_back(convertWord(word));
     }
 }
 
