@@ -11,7 +11,7 @@ void getWords(vector<string>& words, ifstream& file);
 string convertWord(const string& word);
 void sortWords(vector<string>& words);
 vector<pair<string, int>> getWordCounts(vector<string>& words);
-void print(vector<pair<string, int>>& wordCount);
+void print(const vector<pair<string, int>>& wordCount);
 
 int main()
 {
@@ -28,6 +28,8 @@ int main()
     sortWords(myWords);
     
     vector<pair<string, int>> myWordCounts = getWordCounts(myWords);
+
+    print(myWordCounts);
 
     return 0;
 }
@@ -91,7 +93,7 @@ void print(const vector<pair<string, int>>& wordCounts)
 {
     cout << "Word Frequencies of passage from Sherlock Holmes" << endl;
     cout << "------------------------------------------------" << endl;
-    
+
     for(size_t i = 0; i < wordCounts.size(); i++)
     {
         cout << wordCounts[i].first << " : " << wordCounts[i].second << endl;
