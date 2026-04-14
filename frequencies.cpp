@@ -48,3 +48,10 @@ string convertWord(const string& word)
 
     return converted;
 }
+
+
+void sortWords(vector<string>& words)
+{
+    sort(words.begin(), words.end())
+}
+
