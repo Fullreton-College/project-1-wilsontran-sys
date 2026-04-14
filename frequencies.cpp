@@ -2,11 +2,13 @@
 #include <fstream>
 #include <cstdlib>
 #include <vector>
+#include <algorithm>
 #include <string>
 
 using namespace std;
 
 void getWords(vector<string>& words, ifstream& file);
+string convertWord(const string& word);
 void sortWords(vector<string>& words);
 vector<pair<string, int>> getWordCounts(vector<string>& words);
 
@@ -33,4 +35,9 @@ void getWords(vector<string>& words, ifstream& file)
     {
         words.push_back(word);
     }
+}
+
+string convertWord(const string& word)
+{
+
 }
