@@ -11,7 +11,7 @@ void getWords(vector<string>& words, ifstream& file);
 string convertWord(const string& word);
 void sortWords(vector<string>& words);
 vector<pair<string, int>> getWordCounts(vector<string>& words);
-void print(vector<string> &words);
+void print(vector<pair<string, int>>& wordCount);
 
 int main()
 {
@@ -85,4 +85,9 @@ vector<pair<string, int>> getWordCounts(vector<string>& words)
     wordCounts.push_back(make_pair(currWord, count));
 
     return wordCounts;
+}
+
+void print(const vector<pair<string, int>>& wordCounts)
+{
+    
 }
