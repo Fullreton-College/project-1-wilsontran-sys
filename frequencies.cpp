@@ -89,5 +89,11 @@ vector<pair<string, int>> getWordCounts(vector<string>& words)
 
 void print(const vector<pair<string, int>>& wordCounts)
 {
+    cout << "Word Frequencies of passage from Sherlock Holmes" << endl;
+    cout << "------------------------------------------------" << endl;
     
+    for(size_t i = 0; i < wordCounts.size(); i++)
+    {
+        cout << wordCounts[i].first << " : " << wordCounts[i].second << endl;
+    }
 }
